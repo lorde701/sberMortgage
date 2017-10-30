@@ -63,7 +63,7 @@ public class MortgageCalculatorPage extends BasePage {
         element.click();
     }
 
-    public String getfieldValue(String fieldName) {
+    public String getFieldValue(String fieldName) {
         return rightSection.findElement(By.xpath("./descendant::span[text()='" + fieldName + "']/following-sibling::div/span")).getText();
     }
 

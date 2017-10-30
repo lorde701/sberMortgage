@@ -55,6 +55,11 @@ public class ScenarioSteps {
     @Then("проверка полученных значений")
     public void checkDate(DataTable data) {
         data.asMap(String.class, String.class)
-                .forEach((field, expectedValue, actualValue)->mortgageCalculatorSteps.checkDate());
+                .forEach((field, expectedValue)->mortgageCalculatorSteps.checkDate(expectedValue, field));
     }
+
+//    @When("^проверка соответствия ожидаемого значения значения {0} реальному {1} из поля {2}")
+//    public void check(String expectedValue, String field) {
+//        mortgageCalculatorSteps.checkDate(expectedValue,field);
+//    }
 }

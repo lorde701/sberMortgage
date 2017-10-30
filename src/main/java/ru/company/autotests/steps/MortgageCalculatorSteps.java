@@ -33,9 +33,9 @@ public class MortgageCalculatorSteps {
         page.checkAdditionalPrivileges(newValue);
     }
 
-    @Step("проверка соответствия ожидаемого значения {0} и фактического {1}")
-    public void checkDate(String field, String expectedValue) {
-        String temp = page.getfieldValue(field);
+    @Step("проверка соответствия ожидаемого значения {0} и фактического в поле {1}")
+    public void checkDate(String expectedValue, String field) {
+        String temp = page.getFieldValue(field);
         temp = temp.substring(0, temp.length() - 2);
         temp = temp.replace(" ","");
         Assert.assertEquals(expectedValue, temp);
