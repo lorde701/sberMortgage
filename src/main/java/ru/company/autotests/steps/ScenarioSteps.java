@@ -54,6 +54,11 @@ public class ScenarioSteps {
 
     @Then("проверка полученных значений")
     public void checkDate(DataTable data) {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         data.asMap(String.class, String.class)
                 .forEach((field, expectedValue)->mortgageCalculatorSteps.checkDate(expectedValue, field));
     }
